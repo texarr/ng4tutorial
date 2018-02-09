@@ -3,16 +3,11 @@
     <h1>Witamy na kursie {{title | uppercase}}</h1>
     Liczba pi to: {{pi | number: '1.1-2'}} <br>
     Dzisiaj jest: {{date | date: 'dd-MM-yyyy'}} <br>
-
-    <ng-container *ngIf=(dog)>
-      Mój pies to: {{dog && dog.name}} <br>
-      Ma {{dog?.age}} lata<br>
-    </ng-container>
   </div>
 
+  <!---->
   <button (click)="showDays()">Pokaz dni</button>
   <button (click)="removeDays()">Usuń dni</button>
-
 
   <div [hidden]="isHidden">
     <h1>Dni tygodnia</h1>
@@ -27,6 +22,7 @@
 
   </div>
 
+  <!---->
   <button (click)="addDogs()">Dodaj</button>
   <button (click)="removeDogs()">Usuń</button>
 
@@ -34,8 +30,8 @@
 
   <ng-template #areDogs>
     <div *ngFor="let dog of dogs; let i = index">
-      <div *ngIf="dog.age > 3">
-        {{i + 1}} Ten pies ma na imie: {{dog.name}} i ma: {{dog.age}} lata.
+      <div *ngIf="dog.age >= 2">
+        ID:{{i + 1}} Ten pies ma na imie: {{dog.name}} i ma: {{dog.age}} lata.
       </div>
     </div>
   </ng-template>
@@ -43,7 +39,10 @@
   <ng-template #noDogs>
     <p>Piesków nie ma :(</p>
   </ng-template>
-  
+  <!---->
+
+  <app-data-binding></app-data-binding>
+
 </ng-container>
 
 

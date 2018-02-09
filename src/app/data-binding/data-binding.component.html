@@ -1,0 +1,19 @@
+<h3 [className]="colorClass">Property binding</h3>
+<img [src]="logoUrl">
+<div>
+    <div>
+        <input [maxLength]="maxLength" [value]="inputText">
+        <button [disabled]="isDisable" (click)="change()">Zmień</button>
+    </div>
+
+    <div>
+        <input [(ngModel)]="inputText2Way">
+        <p>{{inputText2Way}}</p>
+    </div>
+
+    <div>
+        <input (click)="click()">
+        <button [disabled]="button">Dodaj</button>
+        {{showClick}}
+    </div>
+</div>

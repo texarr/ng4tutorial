@@ -20,6 +20,7 @@ export class AppComponent {
 
   // definicja tablicy typu Dog z konstruktorem wstrzykującym dane do tablicy
   dogs = new Array<Dog>();
+
   constructor(){
     this.dogs.push(new Dog('Lorka', 2), new Dog('Rambo', 12), new Dog('Maksiu', 4), new Dog('Andrzej', 7), new Dog('Pluto', 5));
   }
@@ -39,6 +40,8 @@ export class AppComponent {
   removeDays() {
     this.isHidden = true;
   }
+
+
 }
 
 // definicja klasy Dog z konstruktorem
