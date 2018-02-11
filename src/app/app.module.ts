@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { BasicsComponent } from './basics/basics.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { BasicsComponent } from './basics/basics.component';
     AppComponent,
     DataBindingComponent,
     BasicsComponent,
+    EventBindingComponent,
   ],
   imports: [
     BrowserModule,
