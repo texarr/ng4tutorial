@@ -9,6 +9,8 @@ export class EventBindingComponent {
   eventBindingText: string = '';
   colorClass: string = 'color';
   isDisable: boolean = true;
+  profession: string = 'programista';
+  skill: string = 'Angular';
 
   constructor() {}
 
@@ -30,5 +32,13 @@ export class EventBindingComponent {
 
   change() {
     this.isDisable = false;
+  }
+
+  saveP(event) {
+    this.profession = event.target.value;
+  }
+
+  saveS(event) {
+    this.skill = event.target.value;
   }
 }
