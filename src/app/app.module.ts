@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { BasicsComponent } from './basics/basics.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
+import { ChecklistComponent } from './checklist/checklist.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     DataBindingComponent,
     BasicsComponent,
     EventBindingComponent,
+    ChecklistComponent,
   ],
   imports: [
     BrowserModule,
