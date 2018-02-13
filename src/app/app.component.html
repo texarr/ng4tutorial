@@ -4,4 +4,4 @@
 
 <app-event-binding [hidden]="true"></app-event-binding>
 
-<app-checklist [tasksList]="parentTasks"></app-checklist>
+<app-checklist [tasksList]="parentTasks" (eventTask)="selected($event)"></app-checklist>

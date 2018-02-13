@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   parentTasks: Array<string> = ['Sprzatanie', 'Spacer z psem', 'Gotowanie', 'Praca'];
+
+  selected(task: string): void {
+    console.log(task);
+  }
 }
