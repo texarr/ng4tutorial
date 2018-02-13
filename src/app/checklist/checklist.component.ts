@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checklist',
@@ -10,7 +10,7 @@ export class ChecklistComponent {
   constructor() { }
 
   newTask: string;
-  tasksList: Array<string> = [];
+  @Input() tasksList: Array<string> = [];
   tasksDone: Array<string> = [];
 
   add(){
