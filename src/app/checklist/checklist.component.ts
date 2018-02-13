@@ -9,15 +9,11 @@ export class ChecklistComponent {
 
   constructor() { }
 
-  newTask: string;
-  @Input() tasksList: Array<string> = [];
+  tasksList: Array<string> = [];
   tasksDone: Array<string> = [];
 
-  @Output() eventTask = new EventEmitter<string>();
-
-  add(){
-    this.tasksList.push(this.newTask);
-    this.newTask = '';
+  add(task: string){
+    this.tasksList.push(task);
   }
 
   remove(task: string) {
@@ -27,9 +23,5 @@ export class ChecklistComponent {
   done(task: string) {
     this.tasksDone.push(task);
     this.remove(task);
-  }
-
-  select(task) {
-    this.eventTask.emit(task);
   }
 }

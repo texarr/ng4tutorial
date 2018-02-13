@@ -1,7 +1,13 @@
-<app-basics [hidden]="true"></app-basics>
+<div class="container">
 
-<app-data-binding [hidden]="true"></app-data-binding>
+  <app-basics [hidden]="true"></app-basics>
 
-<app-event-binding [hidden]="true"></app-event-binding>
+  <app-data-binding [hidden]="true"></app-data-binding>
 
-<app-checklist [tasksList]="parentTasks" (eventTask)="selected($event)"></app-checklist>
+  <app-event-binding [hidden]="true"></app-event-binding>
+
+  <app-checklist></app-checklist>
+
+</div>
+
+
