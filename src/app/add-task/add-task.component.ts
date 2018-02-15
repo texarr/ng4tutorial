@@ -13,9 +13,12 @@ export class AddTaskComponent {
 
   constructor() { }
 
-  add() {
-    this.emitTask.emit(this.newTask);
-    this.newTask = '';
+  add(input: HTMLInputElement) {
+    // this.emitTask.emit(this.newTask);
+    // this.newTask = '';
+    console.log(input.value);
+    this.emitTask.emit(input.value);
+    input.value = '';
   }
 
 }
