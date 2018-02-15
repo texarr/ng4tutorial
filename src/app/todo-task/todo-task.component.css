@@ -1,14 +1,9 @@
-li {
-  background: lightblue;
-  margin: 5px;
-}
-
 .odd-li {
   background: cornflowerblue;
-  margin: 5px;
+  padding: 5px;
 }
 
 .last-li {
   background: blueviolet;
-  margin: 5px;
+  padding: 5px;
 }

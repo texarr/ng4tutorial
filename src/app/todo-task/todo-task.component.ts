@@ -1,9 +1,14 @@
-import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck} from '@angular/core';
+import {
+  Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'app-todo-task',
   templateUrl: './todo-task.component.html',
-  styleUrls: ['./todo-task.component.css']
+  styleUrls: ['./todo-task.component.css'],
+  // encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class TodoTaskComponent implements OnChanges, OnInit, DoCheck {
 
