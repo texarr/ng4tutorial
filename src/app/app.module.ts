@@ -13,6 +13,7 @@ import { DoneTaskComponent } from './done-task/done-task.component';
 import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
 import {LogService} from "./services/log.service";
+import {TasksService} from "./services/tasks.service";
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {LogService} from "./services/log.service";
     BrowserModule,
       FormsModule
   ],
-  providers: [LogService],
+  providers: [LogService, TasksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
 import {
-  Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck,
+  Component,
   ViewEncapsulation
 } from '@angular/core';
+import {TasksService} from "../services/tasks.service";
 
 @Component({
   selector: 'app-todo-task',
@@ -10,37 +11,22 @@ import {
   // encapsulation: ViewEncapsulation.None
   encapsulation: ViewEncapsulation.Emulated
 })
-export class TodoTaskComponent implements OnChanges, OnInit, DoCheck {
+export class TodoTaskComponent {
 
-  @Input()
   tasksList: Array<string> = [];
-  @Output()
-  emitDone = new EventEmitter<string>();
-  @Output()
-  emitRemove = new EventEmitter<string>();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges - uruchomione! - #1');
-    console.log(changes);
+  constructor(private tasksService: TasksService) {
+    this.tasksService.getTasksListObs().subscribe((tasks: Array<string>) => {
+      this.tasksList = tasks;
+    });
   }
-
-  ngOnInit(): void {
-    console.log('ngOnInit - uruchomione! = #2');
-    this.tasksList.push('zadanie1', 'zadanie2', 'zadanie3');
-  }
-
-  ngDoCheck(): void {
-    console.log('ngDoCheck - uruchomione! = #3');
-  }
-
-  constructor() { }
 
   remove(task: string) {
-    this.emitRemove.emit(task);
+    this.tasksService.remove(task);
   }
 
   done(task: string) {
-    this.emitDone.emit(task);
+    this.tasksService.done(task);
   }
 
   getColor():string {
