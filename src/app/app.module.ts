@@ -14,6 +14,7 @@ import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
 import {LogService} from "./services/log.service";
 import {TasksService} from "./services/tasks.service";
+import { CheckedDirective } from './shared/checked.directive';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {TasksService} from "./services/tasks.service";
     DoneTaskComponent,
     Klikacz1Component,
     Klikacz2Component,
+    CheckedDirective,
   ],
   imports: [
     BrowserModule,
