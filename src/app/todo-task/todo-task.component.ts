@@ -27,6 +27,7 @@ export class TodoTaskComponent {
   }
 
   done(task: Task) {
+    task.end = new Date();
     this.tasksService.done(task);
   }
 
