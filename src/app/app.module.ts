@@ -15,6 +15,7 @@ import { Klikacz2Component } from './klikacz2/klikacz2.component';
 import {LogService} from "./services/log.service";
 import {TasksService} from "./services/tasks.service";
 import { CheckedDirective } from './shared/checked.directive';
+import { DateDirective } from './shared/date.directive';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CheckedDirective } from './shared/checked.directive';
     Klikacz1Component,
     Klikacz2Component,
     CheckedDirective,
+    DateDirective,
   ],
   imports: [
     BrowserModule,
