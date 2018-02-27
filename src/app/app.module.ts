@@ -16,6 +16,7 @@ import {LogService} from "./services/log.service";
 import {TasksService} from "./services/tasks.service";
 import { CheckedDirective } from './shared/checked.directive';
 import { DateDirective } from './shared/date.directive';
+import { TransformTaskPipe } from './shared/transform-task.pipe';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DateDirective } from './shared/date.directive';
     Klikacz2Component,
     CheckedDirective,
     DateDirective,
+    TransformTaskPipe,
   ],
   imports: [
     BrowserModule,
