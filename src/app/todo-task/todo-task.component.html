@@ -2,7 +2,7 @@
   <p [ngStyle]="{color: getColor()}">zadania do wykonania: {{tasksList.length}}</p>
   <ul>
     <li appDate [date]="task.created" *ngFor="let task of tasksList; let odd = odd" [ngClass]="{'odd-li': odd, 'last-li': tasksList.length===1}">
-      {{ task.name | transformTask }}
+      {{ task.name | transformTask : '!' }}
       <button (click)="remove(task)">Usuń</button>
       <button (click)="done(task)">Zrobione</button>
     </li>
