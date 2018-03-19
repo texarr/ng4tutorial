@@ -27,6 +27,12 @@ export class AppComponent implements OnInit {
       console.log(posts);
     });
   }
+
+  getPost() {
+    this.httpService.getPost(1).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {
