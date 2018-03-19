@@ -33,6 +33,12 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  getPostByUser() {
+    this.httpService.getPostByUser(1).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {
