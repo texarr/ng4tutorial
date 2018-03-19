@@ -14,10 +14,12 @@ import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
 import {LogService} from "./services/log.service";
 import {TasksService} from "./services/tasks.service";
+import { HttpService } from "./services/http.service";
 import { CheckedDirective } from './shared/checked.directive';
 import { DateDirective } from './shared/date.directive';
 import { TransformTaskPipe } from './shared/transform-task.pipe';
 import { SortNamePipe } from './shared/sort-name.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -39,9 +41,10 @@ import { SortNamePipe } from './shared/sort-name.pipe';
   ],
   imports: [
     BrowserModule,
-      FormsModule
+      FormsModule,
+    HttpClientModule
   ],
-  providers: [LogService, TasksService],
+  providers: [LogService, TasksService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

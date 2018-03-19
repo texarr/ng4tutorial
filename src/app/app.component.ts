@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickService } from "./services/click.service";
+import { HttpService } from "./services/http.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ClickService]
+  providers: [ClickService, HttpService]
 })
 export class AppComponent implements OnInit {
 
   allClicks: number;
 
-  constructor(private clickService: ClickService) {
+  constructor(private clickService: ClickService, private httpService: HttpService) {
 
   }
 
@@ -21,4 +22,16 @@ export class AppComponent implements OnInit {
     });
   }
 
+  getPosts() {
+    this.httpService.getPosts().subscribe(posts => {
+      console.log(posts);
+    });
+  }
+}
+
+export interface Post {
+  userId?: number;
+  id?: number;
+  title?: string;
+  body?: string;
 }
