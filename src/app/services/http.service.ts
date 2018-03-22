@@ -10,7 +10,7 @@ export class HttpService {
 
   //pobieranie wszystkich postów
   getPosts(): Observable<Array<Post>> {
-    return this.http.get<Array<Post>>('https://jsonplaceholder.typicode.com/dupa');
+    return this.http.get<Array<Post>>('https://jsonplaceholder.typicode.com/posts');
   }
 
   //pobieranie jednego posta podając id
