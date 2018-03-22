@@ -52,6 +52,19 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  updatePost() {
+    const p: Post = ({
+      userId: 1,
+      id: 1,
+      title: 'sunt aut facare lorem dupum klarum',
+      body: 'nowy wpis'
+    });
+
+    this.httpService.updatePost(p).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {
