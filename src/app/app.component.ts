@@ -71,6 +71,17 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  changePost() {
+    const p: Post = ({
+      id: 1,
+      body: 'zmieniam tylko wpis',
+    });
+
+    this.httpService.changePost(p).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {
