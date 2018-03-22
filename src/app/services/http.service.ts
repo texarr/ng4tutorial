@@ -33,4 +33,9 @@ export class HttpService {
   updatePost(post: Post): Observable<Post> {
     return this.http.put('https://jsonplaceholder.typicode.com/posts/' + post.id, post);
   }
+
+  //metoda DELETE
+  deletePost(id: number) {
+    return this.http.delete<Post>('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
 }

@@ -65,6 +65,12 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  deletePost() {
+    this.httpService.deletePost(1).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {
