@@ -39,6 +39,19 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  addPost() {
+    const p: Post =({
+      userId: 1,
+      id: null,
+      title: 'Mój post',
+      body: 'Pierwszy post o angularze!',
+    });
+
+    this.httpService.addPost(p).subscribe(post => {
+      console.log(post);
+    });
+  }
 }
 
 export interface Post {

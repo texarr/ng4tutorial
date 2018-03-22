@@ -23,4 +23,9 @@ export class HttpService {
     const param = new HttpParams().set('userId', userId + '');
     return this.http.get<Array<Post>>('https://jsonplaceholder.typicode.com/posts', {params: param})
   }
+
+  //metoda POST
+  addPost(post: Post): Observable<Post> {
+    return this.http.post<Post>('https://jsonplaceholder.typicode.com/posts', post);
+  }
 }
