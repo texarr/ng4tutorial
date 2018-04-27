@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   getPosts() {
-    this.allPosts$ = this.httpService.getPosts();
+    this.allPosts$ = this.httpService.posts$;
   }
 
   getPost() {
