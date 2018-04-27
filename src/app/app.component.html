@@ -8,6 +8,11 @@
   <button class="btn btn-primary" (click)="deletePost()">deletePost</button>
   <button class="btn btn-primary" (click)="changePost()">changePost</button>
 
+  <ul *ngFor="let post of allPosts$ | async">
+    <li>
+      {{post.title}}
+    </li>
+  </ul>
 
 </div>
 

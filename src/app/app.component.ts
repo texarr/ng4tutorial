@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickService } from "./services/click.service";
 import { HttpService } from "./services/http.service";
-import {HttpErrorResponse} from "@angular/common/http";
+import { HttpErrorResponse } from "@angular/common/http";
 import 'rxjs/add/operator/retry';
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ import 'rxjs/add/operator/retry';
   providers: [ClickService, HttpService]
 })
 export class AppComponent implements OnInit {
+
+  allPosts$: Observable<Array<Post>>;
 
   allClicks: number;
 
@@ -25,13 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   getPosts() {
-    this.httpService.getPosts().retry(3).subscribe(posts => {
-      console.log(posts);
-    },
-      (error: HttpErrorResponse) => {
-        console.log(error.status);
-      }
-    );
+    this.allPosts$ = this.httpService.getPosts();
   }
 
   getPost() {
