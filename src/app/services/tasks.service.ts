@@ -10,22 +10,23 @@ export class TasksService {
   private taskListObs = new BehaviorSubject<Array<Task>>([]);
 
   constructor() {
-    this.tasksList = [
+    const tasksList = [
       {name: 'Wyjście z psem', created: new Date().toLocaleString(), isDone: false},
       {name: 'Nauka angulara', created: new Date().toLocaleString(), isDone: false},
       {name: 'Zadanietestowe', created: new Date().toLocaleString(), end: new Date().toLocaleString(), isDone: true}
     ];
-    this.taskListObs.next(this.tasksList);
+    this.taskListObs.next(tasksList);
   }
 
   add(task: Task){
-    this.tasksList.push(task);
-    this.taskListObs.next(this.tasksList);
+    const list = this.taskListObs.getValue();
+    list.push(task);
+    this.taskListObs.next(list);
   }
 
   remove(task: Task) {
-    this.tasksList = this.tasksList.filter(e => e!== task);
-    this.taskListObs.next(this.tasksList);
+    const list = this.taskListObs.getValue().filter(e => e!== task);
+    this.taskListObs.next(list);
   }
 
   done(task: Task) {
