@@ -15,7 +15,7 @@ export class BasicsComponent {
   dog: Dog;
 
   // zwykła tablica
-  days = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+  days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
 
   isHidden = true;
 

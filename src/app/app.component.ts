@@ -85,6 +85,11 @@ export class AppComponent implements OnInit {
       console.log(post);
     });
   }
+
+  clearPosts() {
+    this.allPosts$ = null;
+    console.log(this.allPosts$);
+  }
 }
 
 export interface Post {

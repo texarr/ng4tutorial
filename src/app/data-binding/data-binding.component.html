@@ -1,19 +1,26 @@
-<h3 [className]="colorClass">Property binding</h3>
-<img [src]="logoUrl">
-<div>
+<div class="container mt-3">
+  <hr/>
+  <h3 [className]="colorClass">{{headerText}}</h3>
+  <img [src]="logoUrl">
+  <div>
     <div>
-        <input [maxLength]="maxLength" [value]="inputText">
-        <button [disabled]="isDisable" (click)="change()">Zmień</button>
+      <p class="mb-0">Ograniczone pole tekstowe. Maksymalnie {{maxLength}} znaków</p>
+      <input [maxLength]="maxLength" [value]="inputText">
+      <button [disabled]="isDisable" (click)="change()">Zmień logo i nagłówek</button>
     </div>
 
     <div>
-        <input [(ngModel)]="inputText2Way">
-        <p>{{inputText2Way}}</p>
+      <p class="mb-0 mt-2">Two way data binding</p>
+      <input [(ngModel)]="inputText2Way">
+      <p class="mb-0">{{inputText2Way}}</p>
     </div>
 
     <div>
-        <input (click)="click()">
-        <button [disabled]="button">Dodaj</button>
-        {{showClick}}
+      <p class="mb-0 mt-2">Najpierw wprowadź wartość</p>
+      <input (click)="click()">
+      <button [disabled]="button" (click)="changeHeader()">Dodaj</button>
+      {{showClick}}
     </div>
+  </div>
+  <hr/>
 </div>

@@ -1,16 +1,23 @@
-<h3 [className]="colorClass">Angular - event binding</h3>
+<div class="container">
+  <h3 [className]="colorClass">Angular - event binding</h3>
 
-<input [disabled]="isDisable" (focus)="onFocus()"><br>
-<input [disabled]="isDisable" (click)="onClick($event)"><br>
-<input [disabled]="isDisable" (mousemove)="onMouseMove($event)"><br>
-<input [disabled]="isDisable" (paste)="onPaste()">{{eventBindingText}}<br>
-<button (click)="change()">Zmiana</button>
+  <input [disabled]="isDisable" (focus)="onFocus()"><span> On focus event</span><br>
+  <input [disabled]="isDisable" (click)="onClick($event)"><span> On click event</span><br>
+  <input [disabled]="isDisable" (mousemove)="onMouseMove($event)"><span> On mouse move event</span><br>
+  <p class="mt-0 mb-0">Wklej test w pole</p>
+  <input [disabled]="isDisable" (paste)="onPaste()">{{eventBindingText}}<br>
+  <button (click)="change()">Aktywuj</button>
 
-<h3>Property binding #32 #33</h3>
-<p>Ten pracownik to {{profession}}, a jego umiejetność to {{skill}}</p>
+  <hr/>
 
-<label for="profession">Zawód</label>
-<input id="profession" [(ngModel)]="profession">
-<br>
-<label for="skill">Umiejętność</label>
-<input id="skill" [(ngModel)]="skill">
+  <h3>Property binding #32 #33</h3>
+  <p>Ten pracownik to {{profession}}, a jego umiejetność to {{skill}}</p>
+
+  <label for="profession">Zawód</label>
+  <input id="profession" [(ngModel)]="profession">
+  <br>
+  <label for="skill">Umiejętność</label>
+  <input id="skill" [(ngModel)]="skill">
+
+  <hr/>
+</div>

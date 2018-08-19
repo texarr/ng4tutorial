@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {TasksService} from "../services/tasks.service";
-import {Task} from "../models/task";
+import { TasksService } from "../services/tasks.service";
+import { Task } from "../models/task";
 
 @Component({
   selector: 'app-add-task',

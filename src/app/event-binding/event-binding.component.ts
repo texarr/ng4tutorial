@@ -9,7 +9,7 @@ export class EventBindingComponent {
   eventBindingText: string = '';
   colorClass: string = 'color';
   isDisable: boolean = true;
-  profession: string = 'programista';
+  profession: string = 'koń Rafał :)';
   skill: string = 'Angular';
 
   constructor() {}

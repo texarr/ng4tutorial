@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent {
-  inputText: string = 'Pole tekstowe';
+  headerText: string = 'Property binding';
+  inputText: string = 'Zmień wartość pola';
   inputText2Way: string = '';
   button: boolean = true;
   showClick: string = '';
 
   colorClass = 'color';
   maxLength = 5;
-  logoUrl = '';
+  logoUrl = 'https://m.ocdn.eu/_m/52e89ff3f27f880160f54cc5534f585b,62,37.jpg';
   isDisable = true;
 
   constructor() {
@@ -33,6 +34,4 @@ export class DataBindingComponent {
       this.showClick = 'Przycisk aktywny!';
       this.button = false;
   }
-
-
 }
