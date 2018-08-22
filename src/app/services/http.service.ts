@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../app.component';
-import { HttpClient, HttpParams } from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
@@ -10,25 +10,35 @@ export class HttpService {
   private postsObs = new BehaviorSubject<Array<Post>>([]);
   posts$ = this.postsObs.asObservable();
 
+  private postObs = new BehaviorSubject<Post>({});
+  post$ = this.postObs.asObservable();
+
   constructor(private http: HttpClient) {
     this.getPosts();
+    this.getPost(1);
   }
 
   //pobieranie wszystkich postów
   getPosts() {
-    return this.http.get<Array<Post>>('https://jsonplaceholder.typicode.com/posts').subscribe(
+    return this.http.get<Array<Post>>('https://jsonplaceholder.typicode.com/posts/').retry(3).subscribe(
       posts=>{
         this.postsObs.next(posts);
       },
-      err=>{
-        console.log(err);
+      (err: HttpErrorResponse) => {
+        console.log(err.status);
       }
     );
   }
 
   //pobieranie jednego posta podając id
-  getPost(id: number): Observable<Post> {
-    return this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/' + id);
+  getPost(id: number) {
+    return this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/' + id).retry(3).subscribe(post => {
+      this.postObs.next(post);
+      console.log(post);
+    },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+      });
   }
 
   //pobieranie postów usera o podanym user id
